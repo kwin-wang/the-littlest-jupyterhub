@@ -220,6 +220,7 @@ def ensure_usergroups():
     """
     user.ensure_group('jupyterhub-admins')
     user.ensure_group('jupyterhub-users')
+    user.ensure_group('hadoop')
 
     logger.info("Granting passwordless sudo to JupyterHub admins...")
     with open('/etc/sudoers.d/jupyterhub-admins', 'w') as f:

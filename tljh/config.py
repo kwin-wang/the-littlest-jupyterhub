@@ -240,7 +240,9 @@ def remove_config_value(config_path, key_path, value):
 
 def check_hub_ready():
     try:
-        r = requests.get('http://127.0.0.1:80', verify=False)
+        # TODO(@wangyajun): when change port ,this should be change 
+        # r = requests.get('http://127.0.0.1:80', verify=False)
+        r = requests.get('http://127.0.0.1:8972', verify=False)
         return r.status_code == 200
     except:
         return False

@@ -34,6 +34,7 @@ class UserCreatingSpawner(SystemdSpawner):
         self.username_template = system_username
         user.ensure_user(system_username)
         user.ensure_user_group(system_username, 'jupyterhub-users')
+        user.ensure_user_group(system_username, 'hadoop')
         if self.user.admin:
             user.ensure_user_group(system_username, 'jupyterhub-admins')
         else:
